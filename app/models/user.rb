@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   has_many :questions
 
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z_\.+\'-]+@[a-zA-Z_\.+\'-]+\Z/, message: 'Enter valid e-mail' }
-  validates :username, presence: true, uniqueness: true, length: { in: 2..40 }, format: { with: /\A[a-zA-Z_\d]+\Z/, message: 'Allowed only letters and _' }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^\s]+\z/ }
+  validates :username, presence: true, uniqueness: true, length: { in: 2..40 }, format: { with: /\A[a-zA-Z_\d]+\z/ }
 
   attr_accessor :password
 
