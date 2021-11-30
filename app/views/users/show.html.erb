@@ -38,6 +38,7 @@
 <div class="column-3-4">
   <div class="user-questions buffer-both">
     <div class="questions-list">
+      <p>Всего <%= @questions.size %> <%= right_spelling(@questions.size)%> </p>
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>
       <% end %>
