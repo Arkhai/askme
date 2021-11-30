@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'sqlite3', '~> 1.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+gem 'jquery-rails'
+gem 'webpacker', '~> 5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
