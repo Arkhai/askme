@@ -3,9 +3,16 @@
     <%= @user.name %>
   </h1>
 
-  <div class="buffer-both">
-    <%= link_to 'Редактировать профиль', edit_user_path(@user) if current_user == @user %>
-  </div>
+  <% if @user == current_user %>
+    <div class="buffer-both">
+      <%= link_to 'Редактировать профиль', edit_user_path(@user) %>
+    </div>
+
+    <div class="buffer-both">
+      <%= link_to 'Удалить профиль', user_path(@user),
+          method: :delete, data: {confirm: 'Точно удалить профиль?'}%>
+    </div>
+  <% end %>
 
   <div class="user-image-div">
     <%= image_tag user_avatar(@user), class: 'user-image', alt: '[Фото]' %>
