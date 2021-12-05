@@ -9,6 +9,7 @@ gem 'sass-rails', '>= 6'
 gem 'jquery-rails'
 gem 'webpacker', '~> 5'
 gem 'uglifier'
+gem 'rails_12factor'
 
 group :production do
   gem 'pg'
