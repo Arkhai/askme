@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to user_path(@question.user), notice: 'Вопрос успешно создан.'
     else
-      render :new
+      render :edit
     end
   end
 

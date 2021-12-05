@@ -38,8 +38,9 @@ class UsersController < ApplicationController
   def show
     @questions = @user.questions.order(created_at: :desc)
 
+    @questions_count = @questions.count
     @answered_questions = @user.questions.count(&:answer)
-    @unanswered_questions = @questions.count - @answered_questions
+    @unanswered_questions = @questions_count - @answered_questions
 
     @new_question = @user.questions.build
   end
