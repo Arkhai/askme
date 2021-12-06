@@ -20,6 +20,13 @@
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
     </div>
+
+    <%# Автор вопроса и ссылка на профиль %>
+    <% if question.author.present? %>
+      <div class="question-date">
+        Автор вопроса: <%= link_to question.author.username, user_path(question.author.id) %>
+      </div>
+    <% end %>
   </div>
 
   <%# Если адресат вопроса — текущий пользователь, он может редактировать вопрос %>
