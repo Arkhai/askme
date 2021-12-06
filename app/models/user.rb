@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^\s]+\z/ }
   validates :username, presence: true, uniqueness: true, length: { in: 2..40 }, format: { with: /\A[a-zA-Z_\d]+\z/ }
+  validates :style, format: { with: /\A#[a-zA-Z_\d]{6}\z/ },  on: :update
 
   validates :password, presence: true, on: :create
   validates_confirmation_of :password

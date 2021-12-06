@@ -1,4 +1,4 @@
-<div class="user-header text-center">
+<div class="user-header text-center" style="background-color: <%= @user.style.nil? ? '#005a55' : @user.style %>">
   <h1 class="title-medium">
     <%= @user.name %>
   </h1>
@@ -6,11 +6,6 @@
   <% if @user == current_user %>
     <div class="buffer-both">
       <%= link_to 'Редактировать профиль', edit_user_path(@user) %>
-    </div>
-
-    <div class="buffer-both">
-      <%= link_to 'Удалить профиль', user_path(@user),
-          method: :delete, data: {confirm: 'Точно удалить профиль?'}%>
     </div>
   <% end %>
 
