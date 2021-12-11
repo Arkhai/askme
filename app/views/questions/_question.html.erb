@@ -22,11 +22,13 @@
     </div>
 
     <%# Автор вопроса, ссылка на профиль %>
-    <% if question.author.present? %>
       <div class="question-date">
-        Автор вопроса: <%= link_to question.author.username, user_path(question.author.id) %>
+        <% if question.author.present? %>
+          Автор вопроса: <%= link_to question.author.username, user_path(question.author.id) %>
+        <% else %>
+          Автор вопроса предпочёл остаться анонимным
+        <% end %>
       </div>
-    <% end %>
   </div>
 
   <%# Если адресат вопроса — текущий пользователь, он может редактировать вопрос %>

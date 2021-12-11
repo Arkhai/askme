@@ -28,11 +28,11 @@
   <div class="user-statistics container text-center">
     <div class="column-1-3">
       <h1 class="title-small"><%= @questions_count %></h1>
-      <p><%= right_spelling(@questions_count, 'question')%></p>
+      <p><%= right_spelling(@questions_count, 'вопрос', 'вопроса', 'вопросов')%></p>
     </div>
     <div class="column-1-3">
       <h1 class="title-small"><%= @answered_questions %></h1>
-      <p><%= right_spelling(@answered_questions, 'answer')%></p>
+      <p><%= right_spelling(@answered_questions, 'ответ', 'ответа', 'ответов')%></p>
     </div>
     <div class="column-1-3">
       <h1 class="title-small"><%= @unanswered_questions %></h1>
