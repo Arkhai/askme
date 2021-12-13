@@ -1,4 +1,4 @@
-<div class="user-header text-center" style="background-color: <%= @user.style.nil? ? '#005a55' : @user.style %>">
+<div class="user-header text-center" style="background-color: <%= background_color %>">
   <h1 class="title-medium">
     <%= @user.name %>
   </h1>
@@ -20,7 +20,7 @@
 
 <div class="user-details">
   <div class="user-ask-button container text-center">
-    <%= link_to "Спроси меня", '', class: 'button button-light', id: 'ask-button' %>
+    <%= link_to 'Спроси меня', '', class: 'button button-light', id: 'ask-button' %>
   </div>
 
   <%# Выводим счетчики вопросов в три колонки. Обратите внимание, что тут %>

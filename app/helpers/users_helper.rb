@@ -5,4 +5,8 @@ module UsersHelper
     return two if (2..4).include?(number % 10)
     many
   end
+
+  def background_color
+    @user.style.nil? ? '#005a55' : @user.style
+  end
 end
