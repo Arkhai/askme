@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :load_question, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user, except: [:create]
+  before_action :load_user, only: [:edit, :update]
 
   # GET /questions
   def index
@@ -34,7 +35,7 @@ class QuestionsController < ApplicationController
 
   # PATCH/PUT /questions/1
   def update
-    if @question.update(question_params)
+    if @question.update(update_params)
       redirect_to user_path(@question.user), notice: 'Вопрос успешно отредактирован.'
     else
       render :edit
@@ -50,20 +51,28 @@ class QuestionsController < ApplicationController
 
   private
 
-    def load_question
-      @question = Question.find(params[:id])
-    end
+  def load_user
+
+  end
+
+  def load_question
+    @question = Question.find(params[:id])
+  end
 
   def authorize_user
     reject_user unless @question.user == current_user
   end
 
-    def question_params
-      if current_user.present? &&
-        params[:question][:user_id].to_i == current_user.id
-        params.require(:question).permit(:user_id, :text, :answer)
-      else
-        params.require(:question).permit(:user_id, :text)
-      end
+  def question_params
+    if current_user.present? &&
+      params[:question][:user_id].to_i == current_user.id
+      params.require(:question).permit(:user_id, :text, :answer)
+    else
+      params.require(:question).permit(:user_id, :text)
     end
+  end
+
+  def update_params
+    params.require(:question).permit(:answer)
+  end
 end
