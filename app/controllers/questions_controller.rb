@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :load_question, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user, except: [:create]
-  before_action :load_user, only: [:edit, :update]
 
   # GET /questions
   def index
@@ -51,10 +50,6 @@ class QuestionsController < ApplicationController
 
   private
 
-  def load_user
-
-  end
-
   def load_question
     @question = Question.find(params[:id])
   end
@@ -64,12 +59,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    if current_user.present? &&
-      params[:question][:user_id].to_i == current_user.id
-      params.require(:question).permit(:user_id, :text, :answer)
-    else
-      params.require(:question).permit(:user_id, :text)
-    end
+    params.require(:question).permit(:user_id, :text)
   end
 
   def update_params
