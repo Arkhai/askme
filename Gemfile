@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'webpacker', '~> 5'
 gem 'uglifier'
 gem 'rails_12factor'
+gem 'recaptcha', require: 'recaptcha/rails'
+gem 'dotenv-rails'
 
 group :production do
   gem 'pg'
