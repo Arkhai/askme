@@ -5,6 +5,4 @@ class Hashtag < ApplicationRecord
   has_many :questions, through: :hashtag_questions
   
   scope :with_questions, -> { where_exists(:hashtag_questions) }
-  
-  validates :text, uniqueness: true, presence: true
 end
