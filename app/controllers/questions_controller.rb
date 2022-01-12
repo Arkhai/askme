@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.author = current_user
 
-    if check_captcha(@question) && @question.save
+    if check_captcha(@question) && QuestionSave.call(@question)
       redirect_to user_path(@question.user), notice: 'Вопрос успешно создан.'
     else
       render :edit

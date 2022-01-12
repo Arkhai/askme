@@ -174,6 +174,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    where_exists (2.0.0)
+      rails (>= 5.2, < 7.1)
     zeitwerk (2.5.1)
 
 PLATFORMS
@@ -194,6 +196,7 @@ DEPENDENCIES
   uglifier
   web-console (>= 4.1.0)
   webpacker (~> 5)
+  where_exists
 
 RUBY VERSION
    ruby 2.7.3p183

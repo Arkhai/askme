@@ -12,6 +12,7 @@ gem 'uglifier'
 gem 'rails_12factor'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'dotenv-rails'
+gem 'where_exists'
 
 group :production do
   gem 'pg'
