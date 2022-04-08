@@ -1,5 +1,9 @@
 # Askme
 
+## Demo
+
+[qaskme.herokuapp.com/](https://qaskme.herokuapp.com/)
+
 ## Description
 
 Askme is a social network, where one can ask questions to existing users, anonimus questions are also possible. Person, received a question can answer it or delete. 
@@ -10,6 +14,8 @@ It's also possible to change the color of background in profile.
 
 Recaptcha is added to protect application from spam attacks. 
 
+Application is a clone of [ask.fm/](https://ask.fm/)
+
 Application language is Russian.
 
 Implemented in Ruby 2.7.3, Rails 6.1.4.
@@ -18,6 +24,9 @@ Implemented in Ruby 2.7.3, Rails 6.1.4.
 
 * Download or clone repo
 
+```
+git clone git@github.com:Arkhai/askme.git
+```
 
 * Use bundler
 
@@ -25,20 +34,33 @@ Implemented in Ruby 2.7.3, Rails 6.1.4.
 bundle install
 ```
 
-* Create database
+* Install nodejs dependences
 
 ```
-rails db:create
+yarn
 ```
 
-* Run database migrations
+* Create database and run migrations
 
 ```
-rails db:migrate
+rails db:create db:migrate
 ```
 
-* Create credentials as in example to use Recaptcha
-```azure
-RECAPTCHA_ASKME_PUBLIC_KEY='5dhzd54h4d5zsg45dz4h5ztf4gn54fgt5hb45dd54zh5'
-RECAPTCHA_ASKME_PRIVATE_KEY='6T5H64T6H445TH54t5nyg54m5yhn1T44b545'
+* To use Recaptcha create credentials as in example in .env file 
 ```
+RECAPTCHA_ASKME_PUBLIC_KEY=<value>
+RECAPTCHA_ASKME_PRIVATE_KEY=<value>
+```
+To create Recaptcha credentials visit
+
+[developers.google.com/recaptcha/intro](https://developers.google.com/recaptcha/intro)
+
+* Start server
+```
+rails s
+```
+
+* Open web-page
+
+[http://localhost:3000/](http://localhost:3000/)
+
