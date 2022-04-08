@@ -1,6 +1,7 @@
+# Создание, редактирование и удаление вопросов
 class QuestionsController < ApplicationController
-  before_action :load_question, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user, except: [:create]
+  before_action :load_question, only: %i[show edit update destroy]
+  before_action :authorize_user, except: %i[create]
 
   # GET /questions
   def index
@@ -8,8 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   # GET /questions/1
-  def show
-  end
+  def show; end
 
   # GET /questions/new
   def new
@@ -17,8 +17,7 @@ class QuestionsController < ApplicationController
   end
 
   # GET /questions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /questions
   def create

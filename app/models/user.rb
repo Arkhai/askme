@@ -1,8 +1,9 @@
 require 'openssl'
 
+# Валидация пользователя, связи, создание зашифрованного пароля
 class User < ApplicationRecord
   ITERATIONS = 20_000
-  DIGEST = OpenSSL::Digest::SHA256.new
+  DIGEST = OpenSSL::Digest.new('SHA256')
 
   attr_accessor :password
 
@@ -18,7 +19,7 @@ class User < ApplicationRecord
   validates_confirmation_of :password
 
   def self.hash_to_string(password_hash)
-    password_hash.unpack('H*')[0]
+    password_hash.unpack1('H*')
   end
 
   def self.authenticate(email, password)
@@ -32,6 +33,7 @@ class User < ApplicationRecord
     )
 
     return user if user.password_hash == hashed_password
+
     nil
   end
 

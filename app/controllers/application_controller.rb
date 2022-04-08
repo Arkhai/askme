@@ -1,5 +1,5 @@
+# Находим текущего пользователя или запрещаем доступ
 class ApplicationController < ActionController::Base
-
   helper_method :current_user
 
   private

@@ -1,3 +1,4 @@
+# Выводим аватар или заглушку + вывод иконок
 module ApplicationHelper
   def user_avatar(user)
     if user.avatar_url.present?

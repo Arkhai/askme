@@ -213,7 +213,6 @@ DEPENDENCIES
   rubocop
   sass-rails (>= 6)
   sqlite3 (~> 1.4)
-  tzinfo-data
   uglifier
   web-console (>= 4.1.0)
   webpacker (~> 5)

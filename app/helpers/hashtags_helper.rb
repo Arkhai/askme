@@ -1,3 +1,4 @@
+# Находим все хештеги по символу
 module HashtagsHelper
   def text_with_hashtag_links(text)
     text&.gsub(Hashtag::REGEXP) do |hashtag|

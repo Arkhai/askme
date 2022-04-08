@@ -1,3 +1,4 @@
+# Выводим автора вопроса, если он есть
 module QuestionsHelper
   def author(author)
     if author.nil?
